@@ -1,21 +1,5 @@
-main.svelte-1tky8bj {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto
-}
-
-h1.svelte-1tky8bj {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100
-}
-
-@media(min-width: 640px) {
-    main.svelte-1tky8bj {
-        max-width: none
-    }
-}
+main.svelte-1e9puaw{text-align:center;padding:1em;max-width:240px;margin:0 auto}@media(min-width: 640px){main.svelte-1e9puaw{max-width:none}}
+div.svelte-1aqbxr6{background-color:blueviolet}
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");header.svelte-3ronql{font-family:"Bowlby One SC", cursive;background-color:dimgray}h1.svelte-3ronql{color:beige}
 
 /*# sourceMappingURL=bundle.css.map */
