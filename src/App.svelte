@@ -3,31 +3,22 @@
 
   import Destination from "./Destinations.svelte";
   import Header from "./Header.svelte";
+  import HomeCity from "./HomeCity.svelte";
+  import Footer from "./Footer.svelte";
 </script>
 
 <style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
+  .wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto 50px;
   }
 </style>
 
-<Header />
-<main>
+<div class="wrapper">
+  <Header />
+  <HomeCity/>
   <Destination />
-</main>
+  <Footer />
+</div>

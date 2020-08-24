@@ -8,9 +8,15 @@
   header {
     font-family: "Bowlby One SC", cursive;
     background-color: dimgray;
+    grid-row-start: 0;
+    grid-row-end: 1;
+    align-content: center;
+    grid-column: 1 / span 3;
   }
   h1 {
+    text-align: center;
     color: beige;
+    justify-self: center;
   }
 </style>
 
