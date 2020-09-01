@@ -1,6 +1,7 @@
 const railroads = [
   {
     railroad: "Southern Pacific",
+    abbreviation: "SP",
     gameCost: 42000,
     realLifeYears: "1865–1996",
     realLifeOutcome:
@@ -9,6 +10,7 @@ const railroads = [
   },
   {
     railroad: "Atchison, Topeka, and Santa Fe",
+    abbreviation: "AT & SF",
     gameCost: 40000,
     yearsActive: "1859–1996",
     realLifeOutcome: "Merged with Burlington Northern to become BNSF",
@@ -16,6 +18,7 @@ const railroads = [
   },
   {
     railroad: "Union Pacific",
+    abbreviation: "UP",
     gameCost: 40000,
     yearsActive: "1862–present",
     realLifeOutcome: "Currently operating",
@@ -23,6 +26,7 @@ const railroads = [
   },
   {
     railroad: "Pennsylvania",
+    abbreviation: "PA",
     gameCost: 30000,
     yearsActive: "1846–1968",
     realLifeOutcome: "Merged with New York Central to form Penn Central",
@@ -30,6 +34,7 @@ const railroads = [
   },
   {
     railroad: "Chicago, Rock Island, and Pacific",
+    abbreviation: "CRI & P",
     gameCost: 29000,
     yearsActive: "1852–1980",
     realLifeOutcome: "Liquidated",
@@ -37,6 +42,7 @@ const railroads = [
   },
   {
     railroad: "New York Central",
+    abbreviation: "NYC",
     gameCost: 28000,
     yearsActive: "1831–1968",
     realLifeOutcome: "Merged with Pennsylvania Railroad to form Penn Central",
@@ -44,6 +50,7 @@ const railroads = [
   },
   {
     railroad: "Baltimore and Ohio",
+    abbreviation: "B & O",
     gameCost: 24000,
     yearsActive: "1830–1986",
     realLifeOutcome:
@@ -52,6 +59,7 @@ const railroads = [
   },
   {
     railroad: "Missouri Pacific",
+    abbreviation: "MP",
     gameCost: 21000,
     yearsActive: "1849–1982",
     realLifeOutcome: "Merged with Union Pacific",
@@ -59,6 +67,7 @@ const railroads = [
   },
   {
     railroad: "Chesapeake and Ohio",
+    abbreviation: "C & O",
     gameCost: 20000,
     yearsActive: "1869–1972",
     realLifeOutcome: "Renamed to Chessie System",
@@ -66,6 +75,7 @@ const railroads = [
   },
   {
     railroad: "Southern Railway",
+    abbreviation: "SOU",
     gameCost: 20000,
     yearsActive: "1894–1982	",
     realLifeOutcome:
@@ -74,6 +84,7 @@ const railroads = [
   },
   {
     railroad: "Chicago, Burlington and Quincy",
+    abbreviation: "CB & Q",
     gameCost: 20000,
     yearsActive: "1849–1970",
     realLifeOutcome:
@@ -82,6 +93,7 @@ const railroads = [
   },
   {
     railroad: "St. Louis & San Francisco",
+    abbreviation: "SLSF",
     gameCost: 19000,
     yearsActive: "1876–1980",
     realLifeOutcome: "Acquired by Burlington Northern",
@@ -89,6 +101,7 @@ const railroads = [
   },
   {
     railroad: "Louisville and Nashville",
+    abbreviation: "L & N",
     gameCost: 18000,
     yearsActive: "1850–1982",
     realLifeOutcome:
@@ -97,6 +110,7 @@ const railroads = [
   },
   {
     railroad: "Chicago, Milwaukee, St. Paul, and Pacific",
+    abbreviation: "CMSP & P",
     gameCost: 18000,
     yearsActive: "1847–1985",
     realLifeOutcome: "Acquired by the Soo Line Railroad",
@@ -104,6 +118,7 @@ const railroads = [
   },
   {
     railroad: "Great Northern",
+    abbreviation: "GN",
     gameCost: 17000,
     yearsActive: "1890–1970",
     realLifeOutcome:
@@ -112,6 +127,7 @@ const railroads = [
   },
   {
     railroad: "Seaboard Air Line",
+    abbreviation: "SAL",
     gameCost: 14000,
     yearsActive: "1880–1967",
     realLifeOutcome:
@@ -120,6 +136,7 @@ const railroads = [
   },
   {
     railroad: "Illinois Central",
+    abbreviation: "IC",
     gameCost: 14000,
     yearsActive: "1851–1999",
     realLifeOutcome: "Acquired by the Canadian National Railway",
@@ -127,6 +144,7 @@ const railroads = [
   },
   {
     railroad: "Chicago and North Western",
+    abbreviation: "C & NW",
     gameCost: 14000,
     yearsActive: "1865–1995",
     realLifeOutcome: "Merged into Union Pacific",
@@ -134,6 +152,7 @@ const railroads = [
   },
   {
     railroad: "Northern Pacific",
+    abbreviation: "NP",
     gameCost: 14000,
     yearsActive: "1864–1970",
     realLifeOutcome:
@@ -142,6 +161,7 @@ const railroads = [
   },
   {
     railroad: "Atlantic Coast Line",
+    abbreviation: "ACL",
     gameCost: 12000,
     yearsActive: "1840–1967",
     realLifeOutcome:
@@ -150,6 +170,7 @@ const railroads = [
   },
   {
     railroad: "Norfolk and Western",
+    abbreviation: "N & W",
     gameCost: 12000,
     yearsActive: "1838–1982",
     realLifeOutcome: "Merged with Southern Railway to create Norfolk Southern",
@@ -157,6 +178,7 @@ const railroads = [
   },
   {
     railroad: "Gulf, Mobile and Ohio",
+    abbreviation: "GM & O",
     gameCost: 12000,
     yearsActive: "1938–1972",
     realLifeOutcome:
@@ -165,6 +187,7 @@ const railroads = [
   },
   {
     railroad: "Texas and Pacific",
+    abbreviation: "T & P",
     gameCost: 10000,
     yearsActive: "1871–1976",
     realLifeOutcome: "Merged with the Missouri Pacific",
@@ -172,6 +195,7 @@ const railroads = [
   },
   {
     railroad: "Western Pacific",
+    abbreviation: "WP",
     gameCost: 8000,
     yearsActive: "1903–1983",
     realLifeOutcome: "Acquired by Union Pacific",
@@ -179,6 +203,7 @@ const railroads = [
   },
   {
     railroad: "Denver and Rio Grande Western",
+    abbreviation: "D & RGW",
     gameCost: 6000,
     yearsActive: "1870–1988",
     realLifeOutcome:
@@ -187,6 +212,7 @@ const railroads = [
   },
   {
     railroad: "Boston and Maine",
+    abbreviation: "B & M",
     gameCost: 4000,
     yearsActive: "1836–1983",
     realLifeOutcome:
@@ -195,6 +221,7 @@ const railroads = [
   },
   {
     railroad: "New York, New Haven, and Hartford",
+    abbreviation: "NYNH & H",
     gameCost: 4000,
     yearsActive: "1872–1969",
     realLifeOutcome: "Merged into Penn Central",
@@ -202,6 +229,7 @@ const railroads = [
   },
   {
     railroad: "Richmond, Fredericksburg and Potomac",
+    abbreviation: "RF & P",
     gameCost: 4000,
     yearsActive: "1836–1991",
     realLifeOutcome: "Now part of CSX",

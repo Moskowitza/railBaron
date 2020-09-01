@@ -354,92 +354,84 @@ var app = (function () {
 
     const file = "src/Destinations.svelte";
 
-    // (30:2) {#if roll}
-    function create_if_block(ctx) {
-    	let h4;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			h4 = element("h4");
-    			t = text(/*roll*/ ctx[0]);
-    			add_location(h4, file, 30, 4, 894);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, h4, anchor);
-    			append_dev(h4, t);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*roll*/ 1) set_data_dev(t, /*roll*/ ctx[0]);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(h4);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block.name,
-    		type: "if",
-    		source: "(30:2) {#if roll}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
     function create_fragment(ctx) {
-    	let div;
+    	let div1;
+    	let h40;
     	let t0;
+    	let t1;
+    	let t2;
+    	let h41;
+    	let t3;
+    	let t4;
+    	let t5;
+    	let h3;
+    	let t8;
+    	let div0;
+    	let t10;
     	let button;
     	let mounted;
     	let dispose;
-    	let if_block = /*roll*/ ctx[0] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			if (if_block) if_block.c();
-    			t0 = space();
+    			div1 = element("div");
+    			h40 = element("h4");
+    			t0 = text("roll: ");
+    			t1 = text(/*roll*/ ctx[0]);
+    			t2 = space();
+    			h41 = element("h4");
+    			t3 = text("Even/Odd: ");
+    			t4 = text(/*oddEven*/ ctx[1]);
+    			t5 = space();
+    			h3 = element("h3");
+    			h3.textContent = `Territory ${/*territory*/ ctx[3]}`;
+    			t8 = space();
+    			div0 = element("div");
+    			div0.textContent = `${/*step*/ ctx[2][1]}`;
+    			t10 = space();
     			button = element("button");
-    			button.textContent = "Roll";
-    			add_location(button, file, 33, 2, 921);
-    			attr_dev(div, "class", "svelte-1aqbxr6");
-    			add_location(div, file, 28, 0, 871);
+    			button.textContent = "Get Destination";
+    			add_location(h40, file, 39, 2, 1049);
+    			add_location(h41, file, 40, 2, 1073);
+    			add_location(h3, file, 42, 1, 1104);
+    			attr_dev(div0, "class", "svelte-1aqbxr6");
+    			add_location(div0, file, 44, 2, 1138);
+    			add_location(button, file, 46, 2, 1164);
+    			attr_dev(div1, "class", "svelte-1aqbxr6");
+    			add_location(div1, file, 37, 0, 1040);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			if (if_block) if_block.m(div, null);
-    			append_dev(div, t0);
-    			append_dev(div, button);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h40);
+    			append_dev(h40, t0);
+    			append_dev(h40, t1);
+    			append_dev(div1, t2);
+    			append_dev(div1, h41);
+    			append_dev(h41, t3);
+    			append_dev(h41, t4);
+    			append_dev(div1, t5);
+    			append_dev(div1, h3);
+    			append_dev(div1, t8);
+    			append_dev(div1, div0);
+    			append_dev(div1, t10);
+    			append_dev(div1, button);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[2], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[5], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*roll*/ ctx[0]) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
-    				} else {
-    					if_block = create_if_block(ctx);
-    					if_block.c();
-    					if_block.m(div, t0);
-    				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
-    			}
+    			if (dirty & /*roll*/ 1) set_data_dev(t1, /*roll*/ ctx[0]);
+    			if (dirty & /*oddEven*/ 2) set_data_dev(t4, /*oddEven*/ ctx[1]);
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			if (if_block) if_block.d();
+    			if (detaching) detach_dev(div1);
     			mounted = false;
     			dispose();
     		}
@@ -457,8 +449,16 @@ var app = (function () {
     }
 
     function instance($$self, $$props, $$invalidate) {
+    	const steps = {
+    		1: "Get Destination",
+    		2: "Get City",
+    		3: "Roll"
+    	};
+
+    	let step = steps[1];
     	let roll = null;
-    	let isOdd = false;
+    	let oddEven = "";
+    	let territory = "";
 
     	const destinationTable = [
     		{
@@ -518,8 +518,9 @@ var app = (function () {
     		}
     	];
 
-    	function getRandomArbitrary(min, max) {
-    		$$invalidate(0, roll = Math.floor(Math.random() * (max - min) + min));
+    	function getDestination() {
+    		$$invalidate(0, roll = Math.floor(Math.random() * (13 - 2) + 2));
+    		$$invalidate(1, oddEven = Math.round(Math.random()) ? "odd" : "even");
     	}
 
     	const writable_props = [];
@@ -530,25 +531,30 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("Destinations", $$slots, []);
-    	const click_handler = () => getRandomArbitrary(2, 13);
+    	const click_handler = () => getDestination();
 
     	$$self.$capture_state = () => ({
+    		steps,
+    		step,
     		roll,
-    		isOdd,
+    		oddEven,
+    		territory,
     		destinationTable,
-    		getRandomArbitrary
+    		getDestination
     	});
 
     	$$self.$inject_state = $$props => {
+    		if ("step" in $$props) $$invalidate(2, step = $$props.step);
     		if ("roll" in $$props) $$invalidate(0, roll = $$props.roll);
-    		if ("isOdd" in $$props) isOdd = $$props.isOdd;
+    		if ("oddEven" in $$props) $$invalidate(1, oddEven = $$props.oddEven);
+    		if ("territory" in $$props) $$invalidate(3, territory = $$props.territory);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [roll, getRandomArbitrary, click_handler];
+    	return [roll, oddEven, step, territory, getDestination, click_handler];
     }
 
     class Destinations extends SvelteComponentDev {

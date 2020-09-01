@@ -1,6 +1,14 @@
 <script>
+  const steps = {
+    1: "Get Destination",
+    2: "Get City",
+    3: "Roll",
+  };
+  let step = steps[1];
+
   let roll = null;
-  let isOdd = false;
+  let oddEven = '';
+  let territory= ''
   const destinationTable = [
     { roll: 2, odd: "PLAINS", even: "SOUTHWEST" },
     { roll: 3, odd: "SOUTHEAST", even: "SOUTH CENTRAL" },
@@ -14,8 +22,10 @@
     { roll: 11, odd: "NORTHEAST", even: "PLAINS" },
     { roll: 12, odd: "NORTHEAST", even: "NORTHWEST" },
   ];
-  function getRandomArbitrary(min, max) {
-    roll = Math.floor(Math.random() * (max - min) + min);
+  function getDestination() {
+    roll = Math.floor(Math.random() * (13 - 2) + 2);
+    oddEven = Math.round((Math.random())) ? 'odd' : 'even' 
+
   }
 </script>
 
@@ -25,11 +35,14 @@
   }
 </style>
 
-
 <div>
-  {#if roll}
-    <h4>{roll}</h4>
-  {/if}
 
-  <button on:click={() => getRandomArbitrary(2, 13)}>Roll</button>
+  <h4>roll: {roll}</h4>
+  <h4>Even/Odd: {oddEven}</h4>
+
+ <h3>Territory {territory}</h3>
+
+  <div>{step[1]}</div>
+  
+  <button on:click={() => getDestination()}>Get Destination</button>
 </div>
